@@ -1,0 +1,40 @@
+Write an auto completion model for codin on Python. The model should be made of teo different models: one for next token prediction (until the end of the word or until punctuation mark) and line completion. The dataset gor the model is already parsed from GitHub and contains 10000+ files. Write visualisation of the metrics of the model during learning and mechanism,thst saves the best models and make it easy to test the model by hands
+
+Show more
+12:34
+
+Check frontend design skill
+Check frontend design skill
+Now let me build the full autocomplete training system. This is a complex multi-file project.
+
+
+Created 5 files, ran 3 commands, read a file
+Created 5 files, ran 3 commands, read a file
+Here's everything you need — 5 files, zero extra dependencies beyond PyTorch and Matplotlib.
+
+What's included
+prepare_data.py — Data pipeline
+Run this first on your GitHub repo dump. It deduplicates files by MD5 hash, filters low-quality code (too short, no real code lines, optionally AST-checks syntax), splits into train/val/test, and saves a dataset statistics PNG with line/char/token distributions and CDFs.
+
+train.py — The dual model system
+TokenModel — decoder-only Transformer for next-token/word prediction. Uses a causal mask so each position only attends to the past. Generation stops at the first punctuation or whitespace boundary, giving you a clean word-level completion.
+
+LineModel — encoder-decoder Transformer. The encoder reads your typed prefix; the decoder autoregressively generates the rest of the line until <EOS>. Trained on (prefix → suffix) pairs extracted line-by-line from your files.
+
+Both share a CodeTokenizer that splits on Python-specific boundaries (indentation tokens, punctuation, identifiers) and falls back to characters for unknowns.
+
+Metric visualisation — a 2×3 dashboard PNG is saved every ~20% of epochs and at the end, showing: loss curves, log-scale perplexity, top-1 accuracy, LR schedule, gradient norm, and a generalisation gap panel (highlights overfitting in red).
+
+Best model saving — BestModelSaver keeps your top-3 checkpoints by validation loss and auto-deletes worse ones.
+
+Interactive REPL — launches automatically after training. Colour-coded completions, adjustable temperature and top-k on the fly.
+
+evaluate.py — Offline metrics
+Loads your best checkpoints and computes token-level top-1/top-5 accuracy, MRR, perplexity, and latency; plus line-level exact-match, prefix-20 match, BLEU-4, chrF, and latency — all exported to JSON and a summary bar-chart PNG.
+
+Typical run
+bash
+pip install -r requirements.txt
+python prepare_data.py --raw_dir raw_data --syntax_check
+python train.py --data_dir data/train --epochs 30 --batch 64
+python evaluate.py

@@ -1,3 +1,12 @@
+test
+Test_Dataset
+Test_Dataset_Output
+interface
+checkpoints
+Clean_Dataset
+Raw_Dataset
+.token
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
