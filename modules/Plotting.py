@@ -2,7 +2,7 @@ from typing import List, Tuple, Optional, Dict
 from dataclasses import dataclass, field
 
 import matplotlib
-matplotlib.use("Agg")           # headless — saves PNG files
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 from matplotlib.ticker import MaxNLocator
@@ -15,7 +15,7 @@ class MetricLog:
     train_ppl:   List[float] = field(default_factory=list)
     val_ppl:     List[float] = field(default_factory=list)
     lr:          List[float] = field(default_factory=list)
-    token_acc:   List[float] = field(default_factory=list)   # top-1 accuracy
+    token_acc:   List[float] = field(default_factory=list)
     grad_norm:   List[float] = field(default_factory=list)
 
     def append(self, **kw):
