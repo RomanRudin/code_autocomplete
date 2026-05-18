@@ -3,7 +3,8 @@
 
 ## Fututre plans
 
-- [] Restruucture project to be more modular and respect DRY
+- [x] Restruucture project to be more modular and respect DRY
+- [] DEBUG L-MLC-codet5-small.ipynb && L-MLC-codet5p-220m.ipynb, restart codegen model
 - [] L&T: Evaluation
 - [] L: codet5p-770m-py instead of codet5p-220m-py
 - [] L: Salesforce/codegen-350M-mono (reuse for L)
