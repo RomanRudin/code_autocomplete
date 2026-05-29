@@ -1,0 +1,164 @@
+{
+  "model_type": "hf_seq2seq",
+  "n_samples": 500,
+  "syntax_valid": 0.056,
+  "bracket_balance": 0.806,
+  "first_token_match": 0.014,
+  "prefix3_match": 0.0,
+  "nonempty_rate": 1.0,
+  "keyword_match": 0.875,
+  "identifier_match": 0.6088380952380953,
+  "exact_match": 0.0,
+  "bleu4": 0.010784263211772714,
+  "chrf": 0.07530994639689595,
+  "edit_similarity": 0.11191368546047181,
+  "latency_mean": 459.4508613999642,
+  "latency_p50": 311.4321000102791,
+  "latency_p90": 824.9091499994393,
+  "latency_p99": 859.9298900018039,
+  "construction_acceptable": 0.85,
+  "construction_syntax": 0.15,
+  "construction_brackets": 0.8,
+  "construction_detail": [
+    {
+      "prefix": "for i in ",
+      "completion": "+ 1:",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "for item in ",
+      "completion": "if item.get(\"type\") == \"text\":",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "for key, value in ",
+      "completion": "if value is not None:",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "if x ",
+      "completion": "<= 0:",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "if not ",
+      "completion": "or not self.is_open:",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "elif ",
+      "completion": "== \"y\":",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "def __init__(self",
+      "completion": "*args, **kwargs):",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "def main(",
+      "completion": "test_script, script_name):",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "class Foo(",
+      "completion": "Base):",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "return ",
+      "completion": "- 1",
+      "acceptable": 1.0,
+      "valid": 1.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "import ",
+      "completion": "numpy as np",
+      "acceptable": 1.0,
+      "valid": 1.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "from os import ",
+      "completion": "as _os",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "import numpy as ",
+      "completion": "as np",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "x = [",
+      "completion": "* x for x in range(len(x))",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 0.0
+    },
+    {
+      "prefix": "d = {",
+      "completion": "\"_type\": \"bar\"}",
+      "acceptable": 1.0,
+      "valid": 1.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "result = [x for x in ",
+      "completion": "if x not in self.ignore_prefix_tokens",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 0.0
+    },
+    {
+      "prefix": "self.value = ",
+      "completion": "or self.value",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "print(",
+      "completion": "\"\u0420\u00b6\u0432\u0402\u045c",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 0.0
+    },
+    {
+      "prefix": "with open(",
+      "completion": "open(filename, \"w\", encoding=\"utf-",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 0.0
+    },
+    {
+      "prefix": "while ",
+      "completion": "<= 0:",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "model_type": "custom_line",
+  "n_samples": 500,
+  "syntax_valid": 0.064,
+  "bracket_balance": 0.886,
+  "first_token_match": 0.032,
+  "prefix3_match": 0.0,
+  "nonempty_rate": 0.95,
+  "keyword_match": 0.894,
+  "identifier_match": 0.6322666666666666,
+  "exact_match": 0.0,
+  "bleu4": 0.018299875429431702,
+  "chrf": 0.0989742810252948,
+  "edit_similarity": 0.14909205286970878,
+  "latency_mean": 114.92496560007567,
+  "latency_p50": 52.77919999934966,
+  "latency_p90": 270.1161600038177,
+  "latency_p99": 664.9723939919204,
+  "construction_acceptable": 0.4,
+  "construction_syntax": 0.25,
+  "construction_brackets": 0.95,
+  "construction_detail": [
+    {
+      "prefix": "for i in ",
+      "completion": ":",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "for item in ",
+      "completion": ":",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "for key, value in ",
+      "completion": ":",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "if x ",
+      "completion": " is None:",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "if not ",
+      "completion": ":",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "elif ",
+      "completion": " == \"max_con",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "def __init__(self",
+      "completion": ", **kwargs):",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "def main(",
+      "completion": ", config_str",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 0.0
+    },
+    {
+      "prefix": "class Foo(",
+      "completion": "):",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "return ",
+      "completion": "",
+      "acceptable": 1.0,
+      "valid": 1.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "import ",
+      "completion": "",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "from os import ",
+      "completion": "",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "import numpy as ",
+      "completion": "",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "x = [",
+      "completion": "]",
+      "acceptable": 1.0,
+      "valid": 1.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "d = {",
+      "completion": "}",
+      "acceptable": 1.0,
+      "valid": 1.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "result = [x for x in ",
+      "completion": "]",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "self.value = ",
+      "completion": "()",
+      "acceptable": 1.0,
+      "valid": 1.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "print(",
+      "completion": ")",
+      "acceptable": 1.0,
+      "valid": 1.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "with open(",
+      "completion": ", encoding='utf-8') as",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "while ",
+      "completion": ":",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    }
+  ]
+}

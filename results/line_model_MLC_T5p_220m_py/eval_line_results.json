@@ -1,0 +1,164 @@
+{
+  "model_type": "hf_seq2seq",
+  "n_samples": 500,
+  "syntax_valid": 0.074,
+  "bracket_balance": 0.78,
+  "first_token_match": 0.002,
+  "prefix3_match": 0.0,
+  "nonempty_rate": 0.862,
+  "keyword_match": 0.822,
+  "identifier_match": 0.5776666666666667,
+  "exact_match": 0.0,
+  "bleu4": 0.0,
+  "chrf": 0.014863418838489528,
+  "edit_similarity": 0.03573743899672876,
+  "latency_mean": 863.8467008003208,
+  "latency_p50": 1313.8842999978806,
+  "latency_p90": 1393.038739997428,
+  "latency_p99": 1454.7382519878738,
+  "construction_acceptable": 0.4,
+  "construction_syntax": 0.0,
+  "construction_brackets": 0.7,
+  "construction_detail": [
+    {
+      "prefix": "for i in ",
+      "completion": "range(1, len(array)):",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "for item in ",
+      "completion": "# noqa: F401",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "for key, value in ",
+      "completion": "# noqa: F401",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "if x ",
+      "completion": "<= 0:",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "if not ",
+      "completion": "# noqa: UP035",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "elif ",
+      "completion": "== \"y\":",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "def __init__(self",
+      "completion": "*args, **kwargs):",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "def main(",
+      "completion": "-> None:",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 0.0
+    },
+    {
+      "prefix": "class Foo(",
+      "completion": "# noqa: F401",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 0.0
+    },
+    {
+      "prefix": "return ",
+      "completion": "\u0432\u0402\u201d \u0432\ufffd",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "import ",
+      "completion": "# noqa: F401",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "from os import ",
+      "completion": "# noqa: UP035",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "import numpy as ",
+      "completion": "# noqa: UP035",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "x = [",
+      "completion": "# noqa: F401",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 0.0
+    },
+    {
+      "prefix": "d = {",
+      "completion": "# noqa: F401",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 0.0
+    },
+    {
+      "prefix": "result = [x for x in ",
+      "completion": "if x!= 0.5]",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "self.value = ",
+      "completion": "# noqa: E501",
+      "acceptable": 0.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    },
+    {
+      "prefix": "print(",
+      "completion": "Copyright (c) Microsoft Corporation.",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 0.0
+    },
+    {
+      "prefix": "with open(",
+      "completion": "as f:",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 0.0
+    },
+    {
+      "prefix": "while ",
+      "completion": "<= 0:",
+      "acceptable": 1.0,
+      "valid": 0.0,
+      "brackets": 1.0
+    }
+  ]
+}
