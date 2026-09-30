@@ -73,7 +73,8 @@ class BiSelfAttentionRoPE(nn.Module):
 
         attn_mask = None
         if key_padding_mask is not None:
-            attn_mask = key_padding_mask[:, None, None, :]         # (B, 1, 1, T) bool, True = pad
+            # SDPA bool mask: True = MAY attend, so invert the padding mask
+            attn_mask = ~key_padding_mask[:, None, None, :]        # (B, 1, 1, T) bool, True = real token
         out = F.scaled_dot_product_attention(
             q, k, v, attn_mask=attn_mask,
             dropout_p=self.attn_drop if self.training else 0.0,
@@ -107,7 +108,7 @@ class CausalSelfAttentionRoPE(nn.Module):
                 torch.ones(T, T, dtype=torch.bool, device=x.device), diagonal=1
             )                                                       # (T, T)
             pad = key_padding_mask[:, None, None, :]                # (B, 1, 1, T)
-            attn_mask = causal[None, None, :, :] | pad              # (B, 1, T, T)
+            attn_mask = ~(causal[None, None, :, :] | pad)           # (B, 1, T, T), True = may attend
             out = F.scaled_dot_product_attention(
                 q, k, v, attn_mask=attn_mask,
                 dropout_p=self.attn_drop if self.training else 0.0,
@@ -141,7 +142,7 @@ class CrossAttention(nn.Module):
         k, v = kv.permute(2, 0, 3, 1, 4)
         attn_mask = None
         if memory_padding_mask is not None:
-            attn_mask = memory_padding_mask[:, None, None, :]
+            attn_mask = ~memory_padding_mask[:, None, None, :]      # True = real encoder token
         out = F.scaled_dot_product_attention(
             q, k, v, attn_mask=attn_mask,
             dropout_p=self.attn_drop if self.training else 0.0,
