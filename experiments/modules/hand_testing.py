@@ -127,3 +127,66 @@ def hand_test_repl(token_model: Optional[torch.nn.Module],
             continue
 
         print("Unrecognised input. Use :token, :line, :multiline, :temp, :k, or :quit")
+
+
+CURSOR = "<|>"
+
+
+def hand_test_fim_repl(model: torch.nn.Module, tokenizer, device: torch.device,
+                       kind: str = "t5", family: Optional[str] = None):
+    """
+    Interactive fill-in-the-middle test. Paste code, mark the cursor with <|>,
+    submit with an empty line. `kind`/`family` as in modules.fim.fim_generate.
+    """
+    from modules.fim import fim_generate
+
+    print("  Python Autocomplete — Fill-in-the-middle Test")
+    print(f"  Paste code, put {CURSOR} where the cursor is, empty line to submit.")
+    print("  Commands: :temp <float> | :k <int> | :quit")
+    print()
+
+    temperature = 0.0
+    top_k = 10
+
+    while True:
+        buf = []
+        while True:
+            try:
+                line = input(">> " if not buf else ".. ")
+            except (EOFError, KeyboardInterrupt):
+                print("\nBye!")
+                return
+            if not line:
+                break
+            buf.append(line)
+        if not buf:
+            continue
+        raw = buf[0].strip()
+
+        if raw.startswith(":quit"):
+            break
+
+        if raw.startswith(":temp"):
+            try:
+                temperature = float(raw.split()[1])
+                print(f"temperature = {temperature}")
+            except (IndexError, ValueError):
+                print("Usage: :temp 0.7")
+            continue
+
+        if raw.startswith(":k"):
+            try:
+                top_k = int(raw.split()[1])
+                print(f"top_k = {top_k}")
+            except (IndexError, ValueError):
+                print("Usage: :k 40")
+            continue
+
+        code = "\n".join(buf)
+        if code.count(CURSOR) != 1:
+            print(f"Mark exactly one cursor position with {CURSOR}")
+            continue
+        prefix, suffix = code.split(CURSOR)
+        middle = fim_generate(model, tokenizer, prefix, suffix, device, kind=kind,
+                              family=family, temperature=temperature, top_k=top_k)
+        print(f"  ← fill-in-the-middle:\n\033[33m{prefix}\033[32m{middle}\033[33m{suffix}\033[0m\n")
